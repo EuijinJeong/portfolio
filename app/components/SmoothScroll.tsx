@@ -16,7 +16,13 @@ export default function SmoothScroll() {
     }
     requestAnimationFrame(raf);
 
-    return () => lenis.destroy();
+    const resizeObserver = new ResizeObserver(() => lenis.resize());
+    resizeObserver.observe(document.body);
+
+    return () => {
+      resizeObserver.disconnect();
+      lenis.destroy();
+    };
   }, []);
 
   return null;
