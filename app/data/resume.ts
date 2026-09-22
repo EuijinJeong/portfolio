@@ -64,7 +64,7 @@ export const personalProjects: PersonalProject[] = [
     title: "BizMatch",
     period: "2024.07 ~ 2024.12",
     summary:
-      "중소기업 아웃소싱 매칭 B2B 플랫폼. 프로젝트 등록/매칭부터 에스크로 기반 결제, 실시간 채팅까지 지원하는 4인 팀 프로젝트.",
+      "중소기업 아웃소싱 매칭 B2B 플랫폼. 프로젝트 등록/매칭부터 에스크로 기반 결제, 실시간 채팅까지 지원하는 웹사이트.",
     stack: [
       "Java 17",
       "Spring Boot 3.3.4",
@@ -89,7 +89,7 @@ export const projects: Project[] = [
     period: "2026.08 ~ 진행중",
     role: "Backend Developer (설계 및 구현 단독 수행)",
     situation:
-      "KT向 사내 어댑터 솔루션 RA(RAGroupServer/RAManager)가 RMI(운영 콘솔↔어댑터 프로세스) 및 JMX(모니터링 데몬↔어댑터 프로세스) 등 비표준 프로토콜로 통신하고 있어 인증·로깅·디버깅이 어렵고, 10개로 쪼개진 Maven 모듈 구조와 4종 어댑터 클래스의 중복 코드로 유지보수 부담이 큰 상태였음.",
+      "자사 어댑터 솔루션 RA(RAGroupServer/RAManager)가 RMI(운영 콘솔↔어댑터 프로세스) 및 JMX(모니터링 데몬↔어댑터 프로세스) 등 비표준 프로토콜로 통신하고 있어 인증·로깅·디버깅이 어렵고, 10개로 쪼개진 Maven 모듈 구조와 4종 어댑터 클래스의 중복 코드로 유지보수 부담이 큰 상태였음.",
     task: "레거시 RMI 기반 통신을 표준 HTTP REST로 전환하고, 10개 모듈을 배포 단위가 명확한 구조로 재편해 향후 모니터링 체계(REST 기반 상태 조회) 확장의 기반을 마련.",
     actions: [
       "단계적 모듈 통합: 회귀 원인 추적이 어려워지는 것을 방지하기 위해 기존 의존관계 순서(leaf→상위)를 따라 10개 모듈을 5단계(A-1~A-5)로 나누어 순차 병합, 이후 배포 단위별로 ra-common/ra-groupserver/ra-manager 3모듈로 재구조화",
@@ -112,7 +112,7 @@ export const projects: Project[] = [
     period: "2026.06 ~ 2026.10 (5개월)",
     role: "Backend Developer",
     situation:
-      "사내 통합 상태체크 데몬(RMS V7, IBM DataPower/WMQ/IIB/ACE/MFT/RA Adapter 통합 모니터링)을 미래에셋증권에 배포하는 과정에서 ACE(App Connect Enterprise) 모니터링 모듈의 설정 미비와 JMX 커넥션 무한 hang, NPE 등 운영 결함이 발견됨",
+      "사내 통합 상태체크 데몬(RMS V7, IBM DataPower/WMQ/ACE/MFT/IA Adapter 통합 모니터링)을 미래에셋증권에 배포하는 과정에서 ACE(App Connect Enterprise) 모니터링 모듈의 설정 미비와 JMX 커넥션 무한 hang, NPE 등 운영 결함이 발견됨",
     task: "ACE 모니터링 설정을 고객사 환경에 맞게 커스터마이징하고, 발견된 결함을 근본 원인 단위로 수정하여 안정적인 운영 반영을 완료",
     actions: [
       "ACE 모니터링 모듈 config.yaml 설정 및 MyBatis mapper 문법 수정",
@@ -128,11 +128,11 @@ export const projects: Project[] = [
   },
   {
     type: "프로젝트",
-    title: "KT 고객사向 EAI 모니터링 시스템 Spring Boot 마이그레이션 및 안정화",
+    title: "KT 고객사 EAI 모니터링 시스템 Spring Boot 마이그레이션 및 안정화",
     period: "2026.03 ~ 2026.10 (8개월)",
     role: "Backend Developer",
     situation:
-      "KT 고객사向으로 운영 중인 핵심 EAI 모니터링 솔루션(백엔드 데몬 6종 및 웹 API 서버)이 Java 8 / Spring Boot 2.6.3 기반으로 운영되며 보안 취약점 및 EOL 리스크에 노출",
+      "KT 고객사에 운영 중인 핵심 EAI 모니터링 솔루션(백엔드 데몬 6종 및 웹 API 서버)이 Java 8 / Spring Boot 2.6.3 기반으로 운영되며 보안 취약점 및 EOL 리스크에 노출",
     task: "Java 8→17→21, Spring Boot 2.6.3→3.2.5→3.5.16으로의 대규모 프레임워크 메이저 업그레이드를 전담 수행하고, 이후 데몬 6종의 개별 결함을 지속 픽스하며 안정화까지 책임",
     actions: [
       "체크리스트 36건 + 라이브러리 의존성 매핑 40건, 총 76건의 AS-IS/TO-BE 대조표를 직접 설계·작성하고 항목별 담당자로서 단독 처리",
@@ -142,16 +142,16 @@ export const projects: Project[] = [
       "Hibernate 5→6 업그레이드에 따른 JPQL 문법 엄격화, 엔티티 매핑·쿼리 동작 방식 전수 검증",
       "springfox→springdoc-openapi 2.x 교체, MyBatis/Lombok/MapStruct/QueryDSL 등 Jakarta 호환 버전 일괄 업그레이드, Maintenance Mode 라이브러리(zalando problem-spring-web)를 Spring 내장 ProblemDetail(RFC 9457)로 대체",
       "Maven 빌드 설정의 annotationProcessorPaths 순서를 재정립해 어노테이션 프로세싱 충돌 해결, 운영팀과 1개월간 연동 테스트 및 스테이징 검증 주도",
-      "1차 마이그레이션(Boot 3.2.5) 안정화 이후 Boot 3.5.16, JDK 21로 재차 업그레이드하며 데몬 6종(Tracker/TrackerMaster/CheckStatus/TrackerAlert/Scheduler/SMS) 전체에 jasypt 암호화 알고리즘 강화 및 마스터키 외부화(secrets.env) 적용",
-      "데몬별 결함을 개별 진단·수정 — TrackerMaster의 daemon profile 전환 시 상태 레코드 누락(고아 row) 버그, TrackerAlert의 비동기 DB 저장 실패 시 CSV 백업 미비, 각 CSVWriter의 인코딩/디렉토리 생성/이스케이프 결함, CheckStatus의 ACEDaemonDAO 예외 로깅 누락 등",
-      "KT SILK ONM向 SMS 발송 데몬(07 모듈) 마이그레이션 및 신규 개발 병행 — Jasypt 마스터키 평문 하드코딩을 환경변수(secrets.env)로 분리",
+      "1차 마이그레이션(Boot 3.2.5) 안정화 이후 Boot 3.5.16, JDK 21로 재차 업그레이드하며 데몬 프로그램 6종 전체에 jasypt 암호화 알고리즘 강화 및 마스터키 외부화(secrets.env) 적용",
+      "데몬별 결함을 개별 진단·수정 — 데몬 프로세스의 daemon profile 전환 시 상태 레코드 누락(고아 row) 버그, 데몬 프로세스의 비동기 DB 저장 실패 시 CSV 백업 미비, 각 CSVWriter의 인코딩/디렉토리 생성/이스케이프 결함, 자원상태체크 데몬 프로세스의 ACEDaemonDAO 예외 로깅 누락 등",
+      "KT SILK ONM 대상 SMS 발송 데몬(07 모듈) 마이그레이션 및 신규 개발 병행 — Jasypt 마스터키 평문 하드코딩을 환경변수(secrets.env)로 분리",
       "실 API 미호출 mock SOAP 서버 기반 QA 테스트 시나리오 설계 및 검증, HikariCP 설정 프로퍼티 불일치·log4j 버전 충돌 등 Boot3 전환 이슈 진단·수정",
     ],
     results: [
       "실운영 배포 후 현재까지 무장애(0건) 유지",
       "76건 항목 단위 구조화로 대규모 메이저 버전 업그레이드 리스크를 사전 통제, 미사용/Deprecated 라이브러리 제거로 빌드 사이즈 감소 및 보안 취약점 사전 차단",
       "1차 마이그레이션 이후에도 데몬 6종 전체의 결함을 개별 픽스하며 8개월간 지속 안정화, 재발 장애 없이 운영 반영",
-      "KT SILK SMS 발송 로직 안정화 및 배포 검증 완료, 민감정보 하드코딩 제거로 보안 리스크 해소",
+      "KT 업무 SMS 발송 로직 안정화 및 배포 검증 완료, 민감정보 하드코딩 제거로 보안 리스크 해소",
     ],
     stack: [
       "Java 21",
@@ -169,7 +169,7 @@ export const projects: Project[] = [
     period: "2025.07 ~ 2026.01 (7개월)",
     role: "Backend Developer",
     situation:
-      "KT向 자사 솔루션 RA(Rainbow Adapter) 시스템이 EOL된 JDK 7 기반으로 운영되어 보안 취약점 및 라이브러리 호환성 리스크에 노출",
+      "KT 자사 솔루션 RA(Rainbow Adapter) 시스템이 EOL된 JDK 7 기반으로 운영되어 보안 취약점 및 라이브러리 호환성 리스크에 노출",
     task: "JDK 7→17 업그레이드를 통해 EOL 리스크를 해소하고, 운영 중단 없이 배포·안정화까지 전 과정을 주도",
     actions: [
       "개발/검증/운영 환경별 JVM 옵션 분석 및 메모리 설정 재구성, GroupServer/Adapter 구동 환경 전환",
