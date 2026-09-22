@@ -41,24 +41,34 @@ export default function ProjectCard({ project }: { project: Project }) {
         </span>
       </button>
 
-      {open && (
-        <div className="space-y-5 border-t border-border px-5 pb-6 pt-5 sm:px-6">
-          <Block label="Situation" text={project.situation} />
-          <Block label="Task" text={project.task} />
-          <ListBlock label="Action" items={project.actions} />
-          <ListBlock label="Result" items={project.results} />
-          <div className="flex flex-wrap gap-2 pt-1">
-            {project.stack.map((s) => (
-              <span
-                key={s}
-                className="rounded-md bg-surface-2 px-2.5 py-1 text-xs text-muted"
-              >
-                {s}
-              </span>
-            ))}
+      <div
+        className={`grid overflow-hidden transition-[grid-template-rows] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] ${
+          open ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
+        }`}
+      >
+        <div className="min-h-0">
+          <div
+            className={`space-y-5 border-t border-border px-5 pb-6 pt-5 transition-opacity duration-300 sm:px-6 ${
+              open ? "opacity-100 delay-150" : "opacity-0"
+            }`}
+          >
+            <Block label="Situation" text={project.situation} />
+            <Block label="Task" text={project.task} />
+            <ListBlock label="Action" items={project.actions} />
+            <ListBlock label="Result" items={project.results} />
+            <div className="flex flex-wrap gap-2 pt-1">
+              {project.stack.map((s) => (
+                <span
+                  key={s}
+                  className="rounded-md bg-surface-2 px-2.5 py-1 text-xs text-muted"
+                >
+                  {s}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
-      )}
+      </div>
     </div>
   );
 }
