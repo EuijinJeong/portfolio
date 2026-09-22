@@ -50,6 +50,38 @@ export const skillGroups: { category: string; items: string[] }[] = [
   { category: "협업/도구", items: ["Git", "Claude Code", "기술 문서화", "고객사 운영 지원"] },
 ];
 
+export interface PersonalProject {
+  title: string;
+  period: string;
+  summary: string;
+  stack: string[];
+  github: string;
+  deployed: boolean;
+}
+
+export const personalProjects: PersonalProject[] = [
+  {
+    title: "BizMatch",
+    period: "2024.07 ~ 2024.12",
+    summary:
+      "중소기업 아웃소싱 매칭 B2B 플랫폼. 프로젝트 등록/매칭부터 에스크로 기반 결제, 실시간 채팅까지 지원하는 4인 팀 프로젝트.",
+    stack: [
+      "Java 17",
+      "Spring Boot 3.3.4",
+      "Spring Security",
+      "JWT",
+      "MyBatis",
+      "Oracle",
+      "WebSocket",
+      "React",
+      "Redux Toolkit",
+      "AWS EC2",
+    ],
+    github: "https://github.com/EuijinJeong/BizMatch3",
+    deployed: false,
+  },
+];
+
 export const projects: Project[] = [
   {
     type: "프로젝트",
