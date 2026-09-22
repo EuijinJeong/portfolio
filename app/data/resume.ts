@@ -53,26 +53,6 @@ export const skillGroups: { category: string; items: string[] }[] = [
 export const projects: Project[] = [
   {
     type: "프로젝트",
-    title: "미래에셋증권 RMS 상태체크 데몬 ACE 모니터링 커스터마이징 및 안정화",
-    period: "2026.06 ~ 2026.10",
-    role: "Backend Developer",
-    situation:
-      "사내 통합 상태체크 데몬(RMS V7, IBM DataPower/WMQ/IIB/ACE/MFT/RA Adapter 통합 모니터링)을 미래에셋증권에 배포하는 과정에서 ACE(App Connect Enterprise) 모니터링 모듈의 설정 미비와 JMX 커넥션 무한 hang, NPE 등 운영 결함이 발견됨",
-    task: "ACE 모니터링 설정을 고객사 환경에 맞게 커스터마이징하고, 발견된 결함을 근본 원인 단위로 수정하여 안정적인 운영 반영을 완료",
-    actions: [
-      "ACE 모니터링 모듈 config.yaml 설정 및 MyBatis mapper 문법 수정",
-      "CompletableFuture 기반 비동기 스케줄링 구조에서 ADTHandler(RA Adapter 모니터링) JMX 커넥션이 무한 대기하는 문제를 타임아웃 백스톱 적용으로 근본 해결",
-      "ADTHandler MBean 생성/HealthCheck 로직을 try 블록으로 분리해 예외 전파 범위 최소화 및 NPE 방어",
-      "상태 조회 쿼리(getUpdateTime) 결과 없음/NULL 케이스 방어 로직 추가, 런타임 생성 파일(.ctl/.log) 관리 체계 정비",
-    ],
-    results: [
-      "ACE 모니터링 기능을 미래에셋증권 환경에 정상 반영",
-      "JMX 커넥션 hang 및 NPE로 인한 데몬 중단 리스크 제거, 다수 NULL/예외 케이스 방어로 데몬 안정성 강화",
-    ],
-    stack: ["Java", "Spring Boot", "MyBatis", "Oracle", "JMX", "IBM ACE"],
-  },
-  {
-    type: "프로젝트",
     title: "RA(Rainbow Adapter) RMI 제거 및 Spring Boot REST API 전환",
     period: "2026.08 ~ 진행중",
     role: "Backend Developer (설계 및 구현 단독 수행)",
@@ -93,6 +73,26 @@ export const projects: Project[] = [
       "(진행중) 이후 모니터링 데몬의 JMX-RMI 호출을 REST 클라이언트 호출로 전환하는 후속 작업의 스펙 기반 마련",
     ],
     stack: ["Java 21", "Spring Boot", "Maven", "JUnit", "JDK HttpServer"],
+  },
+  {
+    type: "프로젝트",
+    title: "미래에셋증권 RMS 상태체크 데몬 ACE 모니터링 커스터마이징 및 안정화",
+    period: "2026.06 ~ 2026.10 (5개월)",
+    role: "Backend Developer",
+    situation:
+      "사내 통합 상태체크 데몬(RMS V7, IBM DataPower/WMQ/IIB/ACE/MFT/RA Adapter 통합 모니터링)을 미래에셋증권에 배포하는 과정에서 ACE(App Connect Enterprise) 모니터링 모듈의 설정 미비와 JMX 커넥션 무한 hang, NPE 등 운영 결함이 발견됨",
+    task: "ACE 모니터링 설정을 고객사 환경에 맞게 커스터마이징하고, 발견된 결함을 근본 원인 단위로 수정하여 안정적인 운영 반영을 완료",
+    actions: [
+      "ACE 모니터링 모듈 config.yaml 설정 및 MyBatis mapper 문법 수정",
+      "CompletableFuture 기반 비동기 스케줄링 구조에서 ADTHandler(RA Adapter 모니터링) JMX 커넥션이 무한 대기하는 문제를 타임아웃 백스톱 적용으로 근본 해결",
+      "ADTHandler MBean 생성/HealthCheck 로직을 try 블록으로 분리해 예외 전파 범위 최소화 및 NPE 방어",
+      "상태 조회 쿼리(getUpdateTime) 결과 없음/NULL 케이스 방어 로직 추가, 런타임 생성 파일(.ctl/.log) 관리 체계 정비",
+    ],
+    results: [
+      "ACE 모니터링 기능을 미래에셋증권 환경에 정상 반영",
+      "JMX 커넥션 hang 및 NPE로 인한 데몬 중단 리스크 제거, 다수 NULL/예외 케이스 방어로 데몬 안정성 강화",
+    ],
+    stack: ["Java", "Spring Boot", "MyBatis", "Oracle", "JMX", "IBM ACE"],
   },
   {
     type: "프로젝트",
@@ -129,7 +129,7 @@ export const projects: Project[] = [
   {
     type: "프로젝트",
     title: "KT KOS 자사 솔루션 (EAI 어댑터) 업그레이드 프로젝트",
-    period: "2025.07 ~ 2026.01",
+    period: "2025.07 ~ 2026.01 (7개월)",
     role: "Backend Developer",
     situation:
       "KT向 자사 솔루션 KOS RA(Rainbow Adapter) 시스템이 EOL된 JDK 7 기반으로 운영되어 보안 취약점 및 라이브러리 호환성 리스크에 노출",

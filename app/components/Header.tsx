@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { profile } from "../data/resume";
+import ContactModal from "./ContactModal";
 
 const NAV_ITEMS = [
   { href: "#top", label: "소개" },
@@ -12,6 +13,7 @@ const NAV_ITEMS = [
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
+  const [contactOpen, setContactOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -44,19 +46,22 @@ export default function Header() {
             </a>
           ))}
         </nav>
-        <a
-          href={`mailto:${profile.email}`}
+        <button
+          type="button"
+          onClick={() => setContactOpen(true)}
           className="rounded-full border border-border px-3 py-1.5 text-xs text-muted transition-colors hover:border-accent hover:text-accent sm:hidden"
         >
           연락하기
-        </a>
-        <a
-          href={`mailto:${profile.email}`}
+        </button>
+        <button
+          type="button"
+          onClick={() => setContactOpen(true)}
           className="hidden rounded-full border border-border px-4 py-1.5 text-sm text-muted transition-colors hover:border-accent hover:text-accent sm:block"
         >
           연락하기
-        </a>
+        </button>
       </div>
+      <ContactModal open={contactOpen} onClose={() => setContactOpen(false)} />
     </header>
   );
 }
