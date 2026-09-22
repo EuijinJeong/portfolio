@@ -13,7 +13,7 @@ export interface Project {
 }
 
 export const profile = {
-  name: "정의진", // TODO: 실제 이름으로 수정하세요
+  name: "정의진",
   role: "Backend Developer",
   email: "jej001228@gmail.com",
   github: "https://github.com/EuijinJeong",
@@ -46,7 +46,7 @@ export const skillGroups: { category: string; items: string[] }[] = [
   { category: "Backend", items: ["Java", "Spring Boot", "Spring Security", "Spring Batch"] },
   { category: "Database", items: ["Oracle", "PostgreSQL", "Altibase", "MyBatis", "QueryDSL"] },
   { category: "Messaging", items: ["IBM MQ", "비동기/이벤트 기반 메시지 처리"] },
-  { category: "Infra", items: ["Linux", "JVM 튜닝(jstat/jmap/pidstat)", "Maven/Nexus"] },
+  { category: "Infra", items: ["Linux", "Maven/Nexus"] },
   { category: "협업/도구", items: ["Git", "Claude Code", "기술 문서화", "고객사 운영 지원"] },
 ];
 
