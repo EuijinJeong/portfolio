@@ -128,11 +128,11 @@ export const projects: Project[] = [
   },
   {
     type: "프로젝트",
-    title: "EAI 모니터링 시스템 웹사이트 Spring Boot 마이그레이션 및 안정화",
+    title: "KT 고객사向 EAI 모니터링 시스템 Spring Boot 마이그레이션 및 안정화",
     period: "2026.03 ~ 2026.10 (8개월)",
     role: "Backend Developer",
     situation:
-      "사내 핵심 EAI 모니터링 솔루션(백엔드 데몬 6종 및 웹 API 서버)이 Java 8 / Spring Boot 2.6.3 기반으로 운영되며 보안 취약점 및 EOL 리스크에 노출",
+      "KT 고객사向으로 운영 중인 핵심 EAI 모니터링 솔루션(백엔드 데몬 6종 및 웹 API 서버)이 Java 8 / Spring Boot 2.6.3 기반으로 운영되며 보안 취약점 및 EOL 리스크에 노출",
     task: "Java 8→17→21, Spring Boot 2.6.3→3.2.5→3.5.16으로의 대규모 프레임워크 메이저 업그레이드를 전담 수행하고, 이후 데몬 6종의 개별 결함을 지속 픽스하며 안정화까지 책임",
     actions: [
       "체크리스트 36건 + 라이브러리 의존성 매핑 40건, 총 76건의 AS-IS/TO-BE 대조표를 직접 설계·작성하고 항목별 담당자로서 단독 처리",
@@ -165,11 +165,11 @@ export const projects: Project[] = [
   },
   {
     type: "프로젝트",
-    title: "KT KOS 자사 솔루션 (EAI 어댑터) 업그레이드 프로젝트",
+    title: "KT 자사 솔루션 (EAI 어댑터) 업그레이드 프로젝트",
     period: "2025.07 ~ 2026.01 (7개월)",
     role: "Backend Developer",
     situation:
-      "KT向 자사 솔루션 KOS RA(Rainbow Adapter) 시스템이 EOL된 JDK 7 기반으로 운영되어 보안 취약점 및 라이브러리 호환성 리스크에 노출",
+      "KT向 자사 솔루션 RA(Rainbow Adapter) 시스템이 EOL된 JDK 7 기반으로 운영되어 보안 취약점 및 라이브러리 호환성 리스크에 노출",
     task: "JDK 7→17 업그레이드를 통해 EOL 리스크를 해소하고, 운영 중단 없이 배포·안정화까지 전 과정을 주도",
     actions: [
       "개발/검증/운영 환경별 JVM 옵션 분석 및 메모리 설정 재구성, GroupServer/Adapter 구동 환경 전환",

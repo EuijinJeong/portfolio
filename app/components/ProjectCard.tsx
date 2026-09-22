@@ -46,9 +46,9 @@ export default function ProjectCard({ project }: { project: Project }) {
           open ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
         }`}
       >
-        <div className="min-h-0">
+        <div className="min-h-0 min-w-0">
           <div
-            className={`space-y-5 border-t border-border px-5 pb-6 pt-5 transition-opacity duration-300 sm:px-6 ${
+            className={`min-w-0 space-y-5 border-t border-border px-5 pb-6 pt-5 transition-opacity duration-300 sm:px-6 ${
               open ? "opacity-100 delay-150" : "opacity-0"
             }`}
           >
@@ -79,7 +79,7 @@ function Block({ label, text }: { label: string; text: string }) {
       <p className="font-mono text-xs uppercase tracking-wide text-accent">
         {label}
       </p>
-      <p className="mt-1.5 text-sm leading-relaxed text-muted">{text}</p>
+      <p className="mt-1.5 text-sm leading-relaxed text-muted break-words">{text}</p>
     </div>
   );
 }
@@ -94,7 +94,7 @@ function ListBlock({ label, items }: { label: string; items: string[] }) {
         {items.map((item, i) => (
           <li key={i} className="flex gap-2 text-sm leading-relaxed text-muted">
             <span className="text-accent">·</span>
-            <span>{item}</span>
+            <span className="min-w-0 break-words">{item}</span>
           </li>
         ))}
       </ul>
